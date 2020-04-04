@@ -1,0 +1,318 @@
+{
+	"info": {
+		"_postman_id": "48d850bb-270c-49db-862a-4db4df791f9f",
+		"name": "EntryTask",
+		"description": "Http_Server automation testing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "127.0.0.1:8001/shopee/test?a=1&b=WencanSun",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8aa31645-449c-4102-b0a3-75db4356a41d",
+						"exec": [
+							"//tests[\"HTTP Status code is 200\"]=responseCode.code == 200;",
+							"var jsonData = JSON.parse(responseBody)",
+							"tests[\"error_code is sucess\"]=jsonData[\"error_code\"]==\"0\"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:8001/shopee/test?a=1&b=WencanSun",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8001",
+					"path": [
+						"shopee",
+						"test"
+					],
+					"query": [
+						{
+							"key": "a",
+							"value": "1"
+						},
+						{
+							"key": "b",
+							"value": "WencanSun"
+						}
+					]
+				},
+				"description": "Successful case"
+			},
+			"response": []
+		},
+		{
+			"name": "127.0.0.1:8001/shopeee/test?a=1&b=WencanSun",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1042025a-1024-4fab-8032-f19f001a87ec",
+						"exec": [
+							"//tests[\"HTTP Status code is 200\"]=responseCode.code == 200;",
+							"var jsonData = JSON.parse(responseBody)",
+							"tests[\"error_code is 11\"]=jsonData[\"error_code\"]==\"11\"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:8001/shopeee/test?a=1&b=WencanSun",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8001",
+					"path": [
+						"shopeee",
+						"test"
+					],
+					"query": [
+						{
+							"key": "a",
+							"value": "1"
+						},
+						{
+							"key": "b",
+							"value": "WencanSun"
+						}
+					]
+				},
+				"description": "invalid request address"
+			},
+			"response": []
+		},
+		{
+			"name": "127.0.0.1:8001/shopee/test?a=&b=",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "553cbd3d-0aa1-4482-9a8b-c104c9bc1d3c",
+						"exec": [
+							"//tests[\"HTTP Status code is 200\"]=responseCode.code == 200;",
+							"var jsonData = JSON.parse(responseBody)",
+							"tests[\"error_code is 21\"]=jsonData[\"error_code\"]==\"21\"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:8001/shopee/test?a=&b=",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8001",
+					"path": [
+						"shopee",
+						"test"
+					],
+					"query": [
+						{
+							"key": "a",
+							"value": ""
+						},
+						{
+							"key": "b",
+							"value": ""
+						}
+					]
+				},
+				"description": "Empty parameter"
+			},
+			"response": []
+		},
+		{
+			"name": "127.0.0.1:8001/shopee/test?a=1&b=",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c56bbb01-5204-4e7a-b628-2d4ae1a1685d",
+						"exec": [
+							"//tests[\"HTTP Status code is 200\"]=responseCode.code == 200;",
+							"var jsonData = JSON.parse(responseBody)",
+							"tests[\"error_code is 21\"]=jsonData[\"error_code\"]==\"21\""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:8001/shopee/test?a=1&b=",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8001",
+					"path": [
+						"shopee",
+						"test"
+					],
+					"query": [
+						{
+							"key": "a",
+							"value": "1"
+						},
+						{
+							"key": "b",
+							"value": ""
+						}
+					]
+				},
+				"description": "b,empty"
+			},
+			"response": []
+		},
+		{
+			"name": "127.0.0.1:8001/shopee/test?a=&b=WencanSun",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f141e1ed-4b18-44fc-935b-11116cfbb11d",
+						"exec": [
+							"//tests[\"HTTP Status code is 200\"]=responseCode.code == 200;",
+							"var jsonData = JSON.parse(responseBody)",
+							"tests[\"error_code is 21\"]=jsonData[\"error_code\"]==\"21\""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:8001/shopee/test?a=&b=WencanSun",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8001",
+					"path": [
+						"shopee",
+						"test"
+					],
+					"query": [
+						{
+							"key": "a",
+							"value": ""
+						},
+						{
+							"key": "b",
+							"value": "WencanSun"
+						}
+					]
+				},
+				"description": "a, empty"
+			},
+			"response": []
+		},
+		{
+			"name": "127.0.0.1:8001/shopee/test?a=1a&b=WencanSun",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "aa164a09-2017-4886-a498-5fa3ca2a4156",
+						"exec": [
+							"//tests[\"HTTP Status code is 200\"]=responseCode.code == 200;",
+							"var jsonData = JSON.parse(responseBody)",
+							"tests[\"error_code is 21\"]=jsonData[\"error_code\"]==\"21\""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:8001/shopee/test?a=1a&b=WencanSun",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8001",
+					"path": [
+						"shopee",
+						"test"
+					],
+					"query": [
+						{
+							"key": "a",
+							"value": "1a"
+						},
+						{
+							"key": "b",
+							"value": "WencanSun"
+						}
+					]
+				},
+				"description": "a, wrong param"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "25fc6984-e2da-4972-90e5-b56f873dc9ad",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "ef2b6300-6431-4ba6-8578-3e0498eabdaa",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
